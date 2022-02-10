@@ -3,12 +3,8 @@ import { dirname } from 'path';
 import http from 'http';
 import express from 'express';
 import { Server } from 'socket.io';
-import dotenv from 'dotenv';
-
-dotenv.config();
-
-const ORIGIN = process.env.ORIGIN || 'http://localhost:3000';
-const PORT = process.env.PORT || 4000;
+import { ORIGIN, PORT } from './config.js';
+import { cameraServiceAgentInit, videoServiceAgentInit } from './service-agents/index.js';
 
 const app = express();
 const server = http.createServer(app);
@@ -32,15 +28,23 @@ server.listen(PORT, () => {
   console.log(`listening on PORT: ${PORT}`);
 });
 
+// Web RTC signaling
 io.on('error', e => console.error(e));
 io.on('connection', socket => {
   socket.on('offer', (id, message) => {
+    console.log('offer', id)
     socket.to(id).emit('offer', socket.id, message);
   });
   socket.on('answer', (id, message) => {
+    console.log('answer', id)
     socket.to(id).emit('answer', message);
   });
   socket.on('candidate', (id, message) => {
+    console.log('candidate', id)
     socket.to(id).emit('candidate', message);
   });
 });
+
+// Service Agents
+cameraServiceAgentInit();
+videoServiceAgentInit();
