@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@norniras/service-agent": "^0.2.5",
+    "@norniras/service-agent": "^0.2.6",
     "dotenv": "^16.0.0",
     "express": "^4.17.2",
     "socket.io": "^4.4.1"

@@ -31,6 +31,7 @@ server.listen(PORT, () => {
 // Web RTC signaling
 io.on('error', e => console.error(e));
 io.on('connection', socket => {
+  console.log(socket.id)
   socket.on('offer', (id, message) => {
     console.log('offer', id)
     socket.to(id).emit('offer', socket.id, message);
@@ -44,6 +45,7 @@ io.on('connection', socket => {
     socket.to(id).emit('candidate', socket.id, message);
   });
   socket.on("disconnect", () => {
+    console.log('disconnected', socket.id)
     socket.emit("disconnectPeer", socket.id);
   });
 });

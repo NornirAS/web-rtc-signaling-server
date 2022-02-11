@@ -1,14 +1,14 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '@norniras/service-agent': ^0.2.5
+  '@norniras/service-agent': ^0.2.6
   dotenv: ^16.0.0
   express: ^4.17.2
   nodemon: ^2.0.15
   socket.io: ^4.4.1
 
 dependencies:
-  '@norniras/service-agent': 0.2.5
+  '@norniras/service-agent': 0.2.6
   dotenv: 16.0.0
   express: 4.17.2
   socket.io: 4.4.1
@@ -18,8 +18,8 @@ devDependencies:
 
 packages:
 
-  /@norniras/service-agent/0.2.5:
-    resolution: {integrity: sha512-CKZHpD1UgGl2C7ZzUPmKbKAgqr5abxnNh9GOHRfYsamBsF20NooWt+C41aQfqmPrpzDkW3b9BLuhN/t7kfyoyA==}
+  /@norniras/service-agent/0.2.6:
+    resolution: {integrity: sha512-JwKNoWB8OPmojFRZwvhIwUoPMZOiiQ9SebkPwVIgU8nLfns7TK3TZNU9l4cWnaKn722Moe+Guw+rFkmj8pBNhg==}
     engines: {node: '>=14', pnpm: '>=6'}
     dependencies:
       node-fetch: 2.6.7
