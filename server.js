@@ -43,6 +43,9 @@ io.on('connection', socket => {
     console.log('candidate', id)
     socket.to(id).emit('candidate', socket.id, message);
   });
+  socket.on("disconnect", () => {
+    socket.emit("disconnectPeer", socket.id);
+  });
 });
 
 // Service Agents

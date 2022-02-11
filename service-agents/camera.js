@@ -20,15 +20,6 @@ export const cameraServiceAgentInit = () => {
             })
           });
           break;
-        case 'DISCONNECTED':
-          cameraServiceAgent.sendData({
-            ghostId: command.CAMERA_MAP_ID,
-            dataString: cameraServiceAgent.getQueryStringFromObject({
-              event: command.ACTION,
-              socket_id: command.SOCKET_ID
-            })
-          });
-          break;
       }
     }
   });

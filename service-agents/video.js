@@ -21,15 +21,6 @@ export const videoServiceAgentInit = () => {
             })
           });
           break;
-        case 'DISCONNECTED':
-          videoServiceAgent.sendCommand({
-            targetUrl: CAMERA_SERVICE_URL,
-            commandString: videoServiceAgent.getQueryStringFromObject({
-              action: data.EVENT,
-              camera_map_id: data.CAMERA_MAP_ID,
-              socket_id: data.SOCKET_ID
-            })
-          });
       }
     }
   });
